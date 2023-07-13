@@ -8,7 +8,6 @@ from elasticsearch import helpers, Elasticsearch
 
 
 print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ STARTING @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-print()
 
 es = Elasticsearch(host = "localhost", port = 9200)
 
@@ -29,7 +28,7 @@ def generator(df2_dic):
             '_id':line.get("id", None),
             '_source':{
                 'Identifiant':line.get("Identifiant", None),
-                'Horodate':line.get("HorodateAcquisitionScada", None),
+                'Horodate':line.get("Status", None),
                 'Value':line.get("Origine", None)
 
             }
